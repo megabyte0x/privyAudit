@@ -9,7 +9,6 @@ import noirc from "@noir-lang/noirc_abi/web/noirc_abi_wasm_bg.wasm?url";
 import main from "../../circuits/tax/src/main.nr?url";
 import nargoToml from "../../circuits/tax/Nargo.toml?url";
 import emailVerifier from "./email";
-await Promise.all([initACVM(fetch(acvm)), initNoirC(fetch(noirc))]);
 
 const show = (id: string, content: string) => {
   const container = document.getElementById(id);
@@ -70,3 +69,8 @@ export async function getCircuit() {
   fm.writeFile("./Nargo.toml", nargoTomlResponse.body);
   return await compile(fm);
 }
+
+// Initialize the application
+(async () => {
+  await Promise.all([initACVM(fetch(acvm)), initNoirC(fetch(noirc))]);
+})();
