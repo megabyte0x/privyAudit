@@ -8,7 +8,6 @@ import noirc from "@noir-lang/noirc_abi/web/noirc_abi_wasm_bg.wasm?url";
 
 import main from "../../circuits/tax/src/main.nr?url";
 import nargoToml from "../../circuits/tax/Nargo.toml?url";
-import emailVerifier from "./email";
 
 const show = (id: string, content: string) => {
   const container = document.getElementById(id);
