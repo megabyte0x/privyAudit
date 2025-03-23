@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@aztec/bb.js": "^0.82.0",
-    "@noir-lang/noir_js": "0.10.0",
-    "@noir-lang/noir_wasm": "0.10.0",
+    "@noir-lang/noir_js": "latest",
+    "@noir-lang/noir_wasm": "latest",
     "@types/node": "^22.13.11",
-    "@zk-email/zkemail-nr": "0.4.2"
+    "@zk-email/zkemail-nr": "latest"
   }
 }
