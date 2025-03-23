@@ -45,7 +45,7 @@ document.getElementById("submit")?.addEventListener("click", async () => {
 
     show('logs', 'Verifying proof... ⌛');
     const isValid = await backend.verifyProof(proof);
-    show("logs", `Proof is ${isValid ? "valid" : "invalid"}... ✅`);
+    show("logs", `Proof is ${isValid ? "Valid Calculation" : "Invalid Calculation"}... ✅`);
 
   } catch (error) {
     show("logs", "Oh 💔");

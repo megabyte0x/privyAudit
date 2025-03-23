@@ -5,8 +5,6 @@ import { ZKEmailProver } from "@zk-email/zkemail-nr/dist/prover";
 import type { CompiledCircuit } from "@noir-lang/noir_js";
 import type { Abi } from "@noir-lang/types";
 
-
-// Import the circuit using dynamic import
 const email = fs.readFileSync(path.join(__dirname, "../public/email.eml"));
 
 
@@ -35,6 +33,7 @@ export async function emailVerifier() {
         console.error("Error in email verification:", error);
         throw error;
     }
+
 }
 
 export default emailVerifier;

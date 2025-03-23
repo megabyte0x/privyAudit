@@ -1,27 +1,113 @@
 <!DOCTYPE html>
 <head>
   <style>
+    :root {
+      --bg-primary: #1a1a1a;
+      --bg-secondary: #2d2d2d;
+      --text-primary: #ffffff;
+      --text-secondary: #b3b3b3;
+      --accent-color: #646cff;
+      --border-color: #404040;
+      --input-bg: #333333;
+      --button-bg: #646cff;
+      --button-hover: #535bf2;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
     .outer {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 2rem;
+      margin-top: 2rem;
     }
+
     .inner {
-        width: 45%;
-        border: 1px solid black;
-        padding: 10px;
-        word-wrap: break-word;
+      width: 45%;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      word-wrap: break-word;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     .input-area {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     .input-group {
-        display: flex;
-        gap: 10px;
-        align-items: center;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    label {
+      min-width: 150px;
+      color: var(--text-secondary);
+    }
+
+    input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background-color: var(--input-bg);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2);
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: var(--button-hover);
+    }
+
+    h2 {
+      color: var(--text-primary);
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    #logs, #results {
+      min-height: 200px;
     }
   </style>
   <script src="https://bundle.run/buffer@6.0.3"></script>
@@ -46,7 +132,6 @@
       <input id="estimatedTax" type="number" placeholder="Enter estimated tax" value="330000" />
     </div>
     <button id="submit">Calculate & Verify Tax</button>
-    <button id="email">Verify Email</button>
   </div>
   <div class="outer">
     <div id="logs" class="inner"><h2>Logs</h2></div>
