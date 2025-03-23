@@ -1,0 +1,5 @@
+input_tax = "330000"
+
+[raw_data]
+total_expenses = "900000"
+total_received = "3400000"
