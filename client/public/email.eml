@@ -1,0 +1,97 @@
+Delivered-To: yashgarg939@gmail.com
+Received: by 2002:a05:7010:eb8c:b0:446:52b3:8786 with SMTP id qq12csp1328622mdb;
+        Sun, 23 Mar 2025 04:35:50 -0700 (PDT)
+X-Received: by 2002:a17:903:298b:b0:223:5a6e:b16 with SMTP id d9443c01a7336-22780c55886mr174353455ad.5.1742729749952;
+        Sun, 23 Mar 2025 04:35:49 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1742729749; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Sh99Slvmw2dnTITvCp/k+NwPHBHaMyT3BEfRzyYkC6xEdiO1zjQA3JEuiDVBZD8Xrn
+         f80eb/bq3fK5Kp/IPY4AGQH7uPJvE7IyngPFoNoJx+/sztMc/cD6OgxqKMPV3j/g+QaS
+         4b/MVmoO/atBMaP5OroSXrX8wyK6asgM49J432HA5vLkyiXL6Y0B2O+JxtDw2GT5JeUm
+         c/XPDNJ/T2x3iL30J36eZBtjwj7ygR2ZdVUadeM9gme8I8MD+dPjO4VajssGvEICqyrU
+         eap+nGSLxmCTo6PhSSAZR9t3H5PGcHBnzXTrRpYu9lsIZpv6LioEjyTKSotKQ3VNeJGt
+         Erbg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=99B0lkliAiba8Jm5IWbn0zusJW1za0O0gKgOgFlWAHM=;
+        fh=PX4IdhrNXMpsxaTq49RVsyP9cUIsX35J2Gm8X34RVDA=;
+        b=LSRB+eMCy8p+hp95YaE05wAFT0+ijZgIZ4GozhLGNm524IWnxfrGXTwDnUa3E7w2qk
+         3OOEPAtKrQ46GytVRQhPv8BjhHx6XUwM4evtrVtsH02BG5ZcMpNnl1rhLpHAE0LmamgB
+         HZaht2zsj7HIO1aT7YA3eVz+7FqdAU7MC8vptk25++Jf0I5IqTNrufLq2+gCb6SeEDTn
+         QMCk+1v4UUp6vtkCaz18XhJAGWnCSQjDrhWW5v/G3bd48XPWe24HeX9TvCCIuEYbNahP
+         i4zm2sWL6JxJP12Wvg1yErf1Iod5N9+NhnWTJZtXWeMBDx5f2qU54tQa9xdvI8jJRIbt
+         9JZg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=d5gHNOeM;
+       spf=pass (google.com: domain of yashygkf@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=yashygkf@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <yashygkf@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d9443c01a7336-22780f2f372sor44086695ad.7.2025.03.23.04.35.49
+        for <yashgarg939@gmail.com>
+        (Google Transport Security);
+        Sun, 23 Mar 2025 04:35:49 -0700 (PDT)
+Received-SPF: pass (google.com: domain of yashygkf@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=d5gHNOeM;
+       spf=pass (google.com: domain of yashygkf@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=yashygkf@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742729749; x=1743334549; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=99B0lkliAiba8Jm5IWbn0zusJW1za0O0gKgOgFlWAHM=;
+        b=d5gHNOeMdRoHvyRkF1FxcUYibQpV5wI5al3DzNgPI2NPA39UEFsRPYhMzG1fDRrB4W
+         aWpYdbDk/Mk1lzVJF6ZpXnGgrzpvuFv3gwOo1Cu/W5BbyHag31zaZsB786PdM5UZK2Dd
+         IkLB9hVaXFT8wkX3ccSgAY0uUBFzlVQH7Q8iV6j1XQlXkJwyPCIZxn92UJX3quDNcMU1
+         3Jp5ZzXPychAsNePbE4oze9cqJGGcqKcuY4n+fvD51QQcO3ntGXs2RS+6Dju3UM3n219
+         eFtlqATbr+1UReFlEoUUBcttoZ+ziVnP8ce+kNM0/iQZaJIk2c8RF1mynQVLy3XpTQpd
+         hUvg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742729749; x=1743334549;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=99B0lkliAiba8Jm5IWbn0zusJW1za0O0gKgOgFlWAHM=;
+        b=cuh3CtcjZFsuJsKofbHXV3aOEZTBLuAmTSBOWJThLJeigo2LSh7tb0nqbg5u46q55t
+         xuARMMMrP21dxo4hdoDRN2/j/MgZONSCxr6L4cRjqiTe67p0+T50tKUXZZ/ZX/YSRyHn
+         cV8rhvOsKyKi7IKG9v2SiUwzeBA1zBuEJfzc4tgsOBp4NLvvwaw8FH15rhgUFHBgPDX1
+         I+SdLys6zgY8/LQcRqCHcRhB+DtivNRn7/4yLp+cVvAjRpffcLtWD8Zxrgejnxy1xGLI
+         SCVJs6TV4MQkhr75AYkQGGFhqbEKyEw9Uel5AWiy5ckXhjKHXNzXkOEyxTjuNSUxDKTz
+         qkWw==
+X-Gm-Message-State: AOJu0YwAmvYnuRUDoYoLjlFl2AHW/2KPY2fDVo1gmhtSL+AaT6FjsSvA
+	Evhed8YoPa687h/XxedNaEO3H75CAO1GR3sQgoOOCRMO6AxBZGhSgOVhYHXzPdKMih6+b1NuC+D
+	8M7vaKsN41kh9V8Ea+iIoHmVOqLK8YO5y
+X-Gm-Gg: ASbGncsTVG43iHsZFm0/O/W5e/oARy6aZe7pnuCGGjcXT+Wde6pLJMegz0OXPtMY8Ea
+	Jcay+dLewqz28DGlUiMcPenfa2BLmN5zKFyEcxQZFn6k17lyn6M7CwloapuYIH5tbpv7kzKcvX7
+	eqJ7bGvta8d0ASypUYqpNIa8aIrsGqPOqw+sieampp4AVCHd0VUvdazGQFhiM=
+X-Google-Smtp-Source: AGHT+IFJqkdPNolwdjXX0wZenn97hEPqHtPJXzGIGI1y43mm4hah4Mv7oPT84uCdRM+xJHwDvgU1Tf8zojocEEGjPjs=
+X-Received: by 2002:a17:90b:3805:b0:2fe:b016:a6ac with SMTP id
+ 98e67ed59e1d1-3030fe98514mr15721424a91.15.1742729748868; Sun, 23 Mar 2025
+ 04:35:48 -0700 (PDT)
+MIME-Version: 1.0
+From: Yash Garg <yashygkf@gmail.com>
+Date: Sun, 23 Mar 2025 17:05:37 +0530
+X-Gm-Features: AQ5f1JoNzBnMOA8QsVWjB2PUuO-DxS_E0ViVmnROY4zUnOj3pbIOZaGqmPLUEis
+Message-ID: <CALum7x85nNpuQ3XmMx6KU51dx7HHdrtgf3zszqG4B3YrdTbvrA@mail.gmail.com>
+Subject: Balance Sheet
+To: yash garg <yashgarg939@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000009ef6b1063100e340"
+
+--0000000000009ef6b1063100e340
+Content-Type: text/plain; charset="UTF-8"
+
+Total Received: 34000000
+Total Expenses: 9000000
+Estimated Tax: 330000
+
+--0000000000009ef6b1063100e340
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Total=C2=A0Received: 34000000<div>Total=C2=A0Expenses: 900=
+0000<br>Estimated Tax: 330000</div><div><br></div></div>
+
+--0000000000009ef6b1063100e340--

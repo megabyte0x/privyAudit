@@ -8,7 +8,7 @@ import noirc from "@noir-lang/noirc_abi/web/noirc_abi_wasm_bg.wasm?url";
 
 import main from "../../circuits/tax/src/main.nr?url";
 import nargoToml from "../../circuits/tax/Nargo.toml?url";
-
+import emailVerifier from "./email";
 await Promise.all([initACVM(fetch(acvm)), initNoirC(fetch(noirc))]);
 
 const show = (id: string, content: string) => {
@@ -51,6 +51,10 @@ document.getElementById("submit")?.addEventListener("click", async () => {
     show("logs", "Oh 💔");
     console.error(error);
   }
+});
+
+document.getElementById("email")?.addEventListener("click", async () => {
+  await emailVerifier();
 });
 
 export async function getCircuit() {
