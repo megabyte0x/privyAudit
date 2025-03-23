@@ -17,8 +17,32 @@ const show = (id: string, content: string) => {
   container.appendChild(document.createElement("br"));
 };
 
+let isInitialized = false;
+
+async function initializeDependencies() {
+  if (isInitialized) return;
+
+  try {
+    show("logs", "Initializing Noir dependencies... ⏳");
+    await Promise.all([
+      initACVM(fetch(acvm)),
+      initNoirC(fetch(noirc))
+    ]);
+    isInitialized = true;
+    show("logs", "Noir dependencies initialized successfully ✅");
+  } catch (error) {
+    show("logs", "Failed to initialize Noir dependencies ❌");
+    console.error("Initialization error:", error);
+    throw error;
+  }
+}
+
 document.getElementById("submit")?.addEventListener("click", async () => {
   try {
+    if (!isInitialized) {
+      await initializeDependencies();
+    }
+
     const { program } = await getCircuit();
     const noir = new Noir(program);
     const backend = new UltraHonkBackend(program.bytecode);
@@ -47,14 +71,22 @@ document.getElementById("submit")?.addEventListener("click", async () => {
     show("logs", `Proof is ${isValid ? "Valid Calculation" : "Invalid Calculation"}... ✅`);
 
   } catch (error) {
-    show("logs", "Oh 💔");
-    console.error(error);
+    show("logs", "Error occurred during proof generation 💔");
+    console.error("Error:", error);
   }
 });
 
-document.getElementById("email")?.addEventListener("click", async () => {
-  await emailVerifier();
-});
+// document.getElementById("email")?.addEventListener("click", async () => {
+//   try {
+//     if (!isInitialized) {
+//       await initializeDependencies();
+//     }
+//     await emailVerifier();
+//   } catch (error) {
+//     show("logs", "Error occurred during email verification 💔");
+//     console.error("Error:", error);
+//   }
+// });
 
 export async function getCircuit() {
   const fm = createFileManager("/");
@@ -71,6 +103,6 @@ export async function getCircuit() {
 }
 
 // Initialize the application
-(async () => {
-  await Promise.all([initACVM(fetch(acvm)), initNoirC(fetch(noirc))]);
-})();
+initializeDependencies().catch(error => {
+  console.error("Failed to initialize application:", error);
+});
