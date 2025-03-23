@@ -24,10 +24,14 @@
         align-items: center;
     }
   </style>
+  <script src="https://bundle.run/buffer@6.0.3"></script>
+  <script>
+    window.Buffer = window.buffer.Buffer;
+  </script>
 </head>
 <body>
-  <script type="module" src="/index.js"></script>
-  <h1>Privy Audit</h1>
+  <script type="module" src="/src/main.ts"></script>
+  <h1>Tax Calculator</h1>
   <div class="input-area">
     <div class="input-group">
       <label for="totalReceived">Total Amount Received:</label>
