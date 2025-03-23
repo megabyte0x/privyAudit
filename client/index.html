@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    .outer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .inner {
+        width: 45%;
+        border: 1px solid black;
+        padding: 10px;
+        word-wrap: break-word;
+    }
+    .input-area {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .input-group {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <script type="module" src="/index.js"></script>
+  <h1>Privy Audit</h1>
+  <div class="input-area">
+    <div class="input-group">
+      <label for="totalReceived">Total Amount Received:</label>
+      <input id="totalReceived" type="number" placeholder="Enter total received" value="3400000" />
+    </div>
+    <div class="input-group">
+      <label for="totalExpenses">Total Expenses:</label>
+      <input id="totalExpenses" type="number" placeholder="Enter total expenses" value="900000" />
+    </div>
+    <div class="input-group">
+      <label for="estimatedTax">Estimated Tax:</label>
+      <input id="estimatedTax" type="number" placeholder="Enter estimated tax" value="330000" />
+    </div>
+    <button id="submit">Calculate & Verify Tax</button>
+  </div>
+  <div class="outer">
+    <div id="logs" class="inner"><h2>Logs</h2></div>
+    <div id="results" class="inner"><h2>Proof</h2></div>
+  </div>
+</body>
+</html>

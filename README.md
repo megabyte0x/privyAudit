@@ -2,10 +2,11 @@
 
 - [ ] Check the application of the noir-jwt or zkEmail.nr
 - [ ] Create Noir Circuit
-  - [ ] Accept private data as input
-  - [ ] Define the financial rules
-  - [ ] Add constraints to the circuit
-- [ ] Generate proof on client side
+  - [x] Accept private data as input
+  - [x] Define the financial rules
+  - [x] Add constraints to the circuit
+  - [ ] Add something with the zkEmail.nr
+- [x] Generate proof on client side
 - [ ] Generate verification contract
 - [ ] Deploy verification contract on Sepolia
 - [ ] Verify proof on chain
